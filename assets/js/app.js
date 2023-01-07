@@ -22,73 +22,83 @@ async function fetchApiData(UserId) {
         });
 }
 
+// Listen to podcost to set your mind your activity
 async function goodVibesPodCast() {
     var ipareturnedData = await fetchApiData(userChannelId[0].channelId);
-    console.log('getAPIData function:  ' + ipareturnedData);
-    var domContainer = $('.cotainer');
-    ipareturnedData.items.forEach((el) => {
-        console.log(el);
-        var videoId = el.id.videoId;
-        var channelId = el.snippet.channelId;
-        var channelTitle = el.snippet.title;
-        var description = el.snippet.description;
+    var data = Object.values(ipareturnedData);
 
-        // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
-        // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
+    console.log(data[5][0]);
+    console.log(data[5][0].id.videoId);
 
-        var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
-                <p><h2>${channelTitle}</h2></p>
-                <p>${description}</p>`
-        domContainer.append(videos);
-    });
+    // for (var item of Object.values(ipareturnedData)) {
+    //     console.log('consoling items:', item);
+    // }
+
+    // var domContainer = $('.cotainer');
+    // ipareturnedData.items.forEach((el) => {
+    //     console.log(el);
+    //     var videoId = el.id.videoId;
+    //     var channelId = el.snippet.channelId;
+    //     var channelTitle = el.snippet.title;
+    //     var description = el.snippet.description;
+
+    //     // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
+    //     // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
+
+    //     var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
+    //             <p><h2>${channelTitle}</h2></p>
+    //             <p>${description}</p>`
+    //     domContainer.append(videos);
+    // });
 }
 goodVibesPodCast();
 
-async function keepMindAndBodytuned() {
-    var ipareturnedData = await fetchApiData(userChannelId[1].channelId);
+// // Basic work out to keep your mind and body wokring togather
+// async function keepMindAndBodytuned() {
+//     var ipareturnedData = await fetchApiData(userChannelId[1].channelId);
 
-    console.log('ipareturnedData:  ' + ipareturnedData);
-    var domContainer = $('.cotainer');
-    ipareturnedData.items.forEach((el) => {
-        console.log(el);
-        var videoId = el.id.videoId;
-        var channelId = el.snippet.channelId;
-        var channelTitle = el.snippet.title;
-        var description = el.snippet.description;
+//     console.log('ipareturnedData:  ' + ipareturnedData);
+//     var domContainer = $('.cotainer');
+//     ipareturnedData.items.forEach((el) => {
+//         console.log(el);
+//         var videoId = el.id.videoId;
+//         var channelId = el.snippet.channelId;
+//         var channelTitle = el.snippet.title;
+//         var description = el.snippet.description;
 
-        // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
-        // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
+//         // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
+//         // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
 
-        var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
-                    <p><h2>${channelTitle}</h2></p>
-                    <p>${description}</p>`
-        domContainer.append(videos);
-    });
-}
-keepMindAndBodytuned()
+//         var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
+//                     <p><h2>${channelTitle}</h2></p>
+//                     <p>${description}</p>`
+//         domContainer.append(videos);
+//     });
+// }
+// keepMindAndBodytuned()
 
-async function BuildAdefinedBody() {
-    var ipareturnedData = await fetchApiData(userChannelId[2].channelId);
-    console.log('BuildAdefinedBody function:  ' + ipareturnedData);
-    var domContainer = $('.cotainer');
-    ipareturnedData.items.forEach((el) => {
-        console.log(el);
-        var videoId = el.id.videoId;
-        var channelId = el.snippet.channelId;
-        var channelTitle = el.snippet.title;
-        var description = el.snippet.description;
+// async function BuildAdefinedBody() {
+//     var ipareturnedData = await fetchApiData(userChannelId[2].channelId);
+//     console.log('BuildAdefinedBody function:  ' + ipareturnedData);
+//     var domContainer = $('.cotainer');
+//     ipareturnedData.items.forEach((el) => {
+//         console.log(el);
+//         var videoId = el.id.videoId;
+//         var channelId = el.snippet.channelId;
+//         var channelTitle = el.snippet.title;
+//         var description = el.snippet.description;
 
-        // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
-        // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
+//         // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
+//         // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
 
-        var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
-                <p><h2>${channelTitle}</h2></p>
-                <p>${description}</p>`
-        domContainer.append(videos);
-    });
-}
+//         var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
+//                 <p><h2>${channelTitle}</h2></p>
+//                 <p>${description}</p>`
+//         domContainer.append(videos);
+//     });
+// }
 
-BuildAdefinedBody();
+// BuildAdefinedBody();
 
 
 
