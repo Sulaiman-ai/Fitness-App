@@ -3,10 +3,11 @@ var runingPlayList = [
     {
         'playlistId': 'playlistId=PL9EOmt9pLEmUMUwSCElenjEQoljab98YX'
     }
-
+    ,
+    {
+        'playlistId': 'playlistId=PL5TLzNi5fYd_gQY6cV42FZ4V4-16W8B_E'
+    }
 ];
-
-
 
 // lowIntensityWorkOut()
 
@@ -18,15 +19,9 @@ async function lowIntensityWorkOut() {
     var section = $('<section></section');
     section.prepend(headerH1);
 
-    var imgInsetAfter = $("h1");
-    var tumbNail = ipareturnedData.items[0].snippet[0].thumbnails.standard.url;
-    var img = $('<img>');
-    img.attr("src", tumbNail);
-    imgInsetAfter.append(img);
-    console.log('Press up running thumb nail');
+    // var tumbNail = ipareturnedData.items[0].snippet[0].thumbnails.standard.url;
     ipareturnedData.items.forEach((el) => {
-        //console.log(el.snippet
-        //);
+
         console.log('print: ',
             el
         );
@@ -35,7 +30,36 @@ async function lowIntensityWorkOut() {
         var title = el.snippet.title;
         var description = el.snippet.description;
 
+        var videos = `
+        <iframe width="420" height="315" src='${emBedClip}'></iframe>
+        <h3>${title}</h3>
+        `
+        section.append(videos);
+    });
+    domContainer.after(section);
+}
 
+lowIntensityWorkOut();
+
+// Nutrition and mood regulation 
+async function nutritianHelpRegulateMood() {
+    var ipareturnedData = await fetchApiData(runingPlayList[1].playlistId);
+    console.log('Running low intensity workout:  ' + Object.values(ipareturnedData.items));
+    var domContainer = $('.cotainer');
+    var headerH1 = $('<h1></h1>').text('Regulate mood by taking the right nutrition');
+    var section = $('<section></section');
+    section.prepend(headerH1);
+
+    // var tumbNail = ipareturnedData.items[0].snippet[0].thumbnails.standard.url;
+    ipareturnedData.items.forEach((el) => {
+
+        console.log('print: ',
+            el
+        );
+
+        var emBedClip = youtube + el.snippet.resourceId.videoId;
+        var title = el.snippet.title;
+        var description = el.snippet.description;
 
         var videos = `
         <iframe width="420" height="315" src='${emBedClip}'></iframe>
@@ -43,9 +67,8 @@ async function lowIntensityWorkOut() {
         `
         section.append(videos);
     });
-    domContainer.append(section);
+    domContainer.after(section);
 }
 
-
-lowIntensityWorkOut();
+nutritianHelpRegulateMood();
 
