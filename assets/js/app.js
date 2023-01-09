@@ -8,10 +8,13 @@ var userChannelId = [
         'channelId': 'channelId=UCsC9Y1KhOw-aKSUBE0F_ikQ'
     },
     {
-        'channelId': 'channelId=UCs_azWRsdYDhKonquMlAMfQ',
+        'channelId': 'channelId=UCs_azWRsdYDhKonquMlAMfQ'
     },
     {
         'channelId': 'channelId=UCjTp-nBKswYLumqmVeBPwYw'
+    },
+    {
+        'playlistId': 'PL9EOmt9pLEmUMUwSCElenjEQoljab98YX'
     }
 ];
 
@@ -21,7 +24,6 @@ async function fetchApiData(UserId) {
             return resp;
         });
 }
-
 // Listen to podcost to set your mind your activity
 async function goodVibesPodCast() {
     var ipareturnedData = await fetchApiData(userChannelId[0].channelId);
@@ -30,26 +32,26 @@ async function goodVibesPodCast() {
     console.log(data[5][0]);
     console.log(data[5][0].id.videoId);
 
-    // for (var item of Object.values(ipareturnedData)) {
-    //     console.log('consoling items:', item);
-    // }
+    for (var item of Object.values(ipareturnedData)) {
+        console.log('consoling items:', item);
+    }
 
-    // var domContainer = $('.cotainer');
-    // ipareturnedData.items.forEach((el) => {
-    //     console.log(el);
-    //     var videoId = el.id.videoId;
-    //     var channelId = el.snippet.channelId;
-    //     var channelTitle = el.snippet.title;
-    //     var description = el.snippet.description;
+    var domContainer = $('.cotainer');
+    ipareturnedData.items.forEach((el) => {
+        console.log(el);
+        var videoId = el.id.videoId;
+        var channelId = el.snippet.channelId;
+        var channelTitle = el.snippet.title;
+        var description = el.snippet.description;
 
-    //     // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
-    //     // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
+        // console.log(`videoId: ${videoId} channelId: ${channelId} channelTitle: ${channelTitle} description: ${description}`)
+        // console.log(youtube + "v=" + videoId + "&ab_channel=" + channelId);
 
-    //     var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
-    //             <p><h2>${channelTitle}</h2></p>
-    //             <p>${description}</p>`
-    //     domContainer.append(videos);
-    // });
+        var videos = `<iframe width="420" height="315" src='${youtube}${videoId}'></iframe>
+                <p><h2>${channelTitle}</h2></p>
+                <p>${description}</p>`
+        domContainer.append(videos);
+    });
 }
 goodVibesPodCast();
 

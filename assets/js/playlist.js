@@ -3,6 +3,7 @@ var youtube = 'https://www.youtube.com/embed/';
 var fetchApi = 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet'
 var otherSearchParameters = 'videoType=videoTypeUnspecified'
 
+// building muscles: https://www.youtube.com/@JeffNippard
 // We are going for three types of playlist for building body mass
 var playlist = [
     {
@@ -14,8 +15,9 @@ var playlist = [
     {
         'playlistId': 'playlistId=PLp4G6oBUcv8x4Z0h8Fd40t--bGSwZjusI'
     }
-
 ];
+
+
 
 async function fetchApiData(UserId) {
     return $.get(`${fetchApi}&key=${apiKey}&${UserId}`)
@@ -36,7 +38,7 @@ async function fundamentalsSeries() {
     ipareturnedData.items.forEach((el) => {
         //console.log(el.snippet
         //);
-        console.log('print: ',
+        console.log('Running low intensity workout print: ',
             el
         );
 
@@ -112,3 +114,4 @@ async function benchPress() {
     domContainer.append(section);
 }
 benchPress();
+
