@@ -9,9 +9,15 @@ section {
 }
 
 .card {
-    margin-top: 30px !important;
+    margin: 10px auto !important;
+
 }
 
 .modal-dialog {
     max-width: 60%;
+}
+
+.model-pos {
+    top: 58px !important;
+    left: 104px !important;
 }

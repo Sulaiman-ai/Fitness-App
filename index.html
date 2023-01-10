@@ -46,14 +46,19 @@
                 <section>
                     <div class="col-9 offset-3" id="main">
 
-                        <div class="card mb-3" style="max-width: 1000px;">
+                        <div class="card mb-3 " style="max-width: 1000px;">
                             <div class="row no-gutters">
-                                <div class="col-md-4">
+                                <div class=" col-md-4"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal">
                                     <img src="https://picsum.photos/200"
                                         class="card-img" alt="...">
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
+                                <div class="col-md-8"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <div class="card-body" data-toggle="modal"
+                                        data-target="#exampleModal">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">This is a wider
                                             card with supporting text below as a
@@ -62,21 +67,20 @@
                                             bit longer.</p>
 
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn
+                                        <!-- <button type="button" class="btn
                                             btn-primary" data-toggle="modal"
                                             data-target="#exampleModal">
                                             Launch demo modal
-                                        </button>
-
+                                        </button> -->
                                         <!-- Modal -->
                                         <div class="modal fade"
                                             id="exampleModal" tabindex="-1"
                                             role="dialog"
                                             aria-labelledby="exampleModalLabel"
                                             aria-hidden="true">
-                                            <div class="modal-dialog"
+                                            <div class="modal-dialog model-pos"
                                                 role="document">
-                                                <div class="modal-content">
+                                                <div class=" modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title"
                                                             id="exampleModalLabel">Modal
@@ -89,8 +93,10 @@
                                                                 aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <div class="card"
+                                                    <div class=" row
+                                                        modal-body">
+                                                        <div class="card
+                                                            col-md-3"
                                                             style="width:
                                                             18rem;">
                                                             <img
@@ -112,7 +118,8 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="card"
+                                                        <div class="card
+                                                            col-md-3"
                                                             style="width:
                                                             18rem;">
                                                             <img
@@ -134,7 +141,8 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="card"
+                                                        <div class="card
+                                                            col-md-3"
                                                             style="width:
                                                             18rem;">
                                                             <img
