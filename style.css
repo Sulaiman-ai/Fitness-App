@@ -5,6 +5,14 @@ body {
 section {
     display: flex;
     flex-direction: column;
-    margin-left: 500px;
-    margin-top: 50px;
+    margin-left: 700px;
+    margin-top: 100px;
+}
+
+.card {
+    margin-top: 30px !important;
+}
+
+.modal-dialog {
+    max-width: 60%;
 }
