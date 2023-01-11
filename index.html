@@ -1,140 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness App</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness App</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
 
-    <div class="nav-bar">
+        <div class="nav-bar">
 
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1"><h1>Fitness App</h1></span>
-          </nav>
-        
-    </div>
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1"><h1>Fitness App</h1></span>
+            </nav>
 
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-3 px-1 bg-dark position-fixed" id="sticky-sidebar">
-              <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Exercise Routines</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Articles</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Nutrition</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Recipes</button>
-              </div>
-          </div>
-        
-      
+        </div>
 
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-3 px-1 bg-dark position-fixed"
+                    id="sticky-sidebar">
+                    <div class="nav flex-column flex-nowrap vh-100 overflow-auto
+                        text-white p-2">
+                        <button type="button" class="btn btn-secondary btn-lg
+                            btn-block">Exercise Routines</button>
+                        <button type="button" class="btn btn-secondary btn-lg
+                            btn-block">Articles</button>
+                        <button type="button" class="btn btn-secondary btn-lg
+                            btn-block">Nutrition</button>
+                        <button type="button" class="btn btn-secondary btn-lg
+                            btn-block">Recipes</button>
+                    </div>
+                </div>
+
+                <!-- Section -->
                 <section>
+                    <div class="col-9 offset-3" id="main">
 
-                  <div class="col-9 offset-3" id="main">
-              
-                      <div class="card mb-3" style="max-width: 1000px;">
-                          <div class="row no-gutters">
-                            <div class="col-md-4">
-                              <img src="https://picsum.photos/200" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-                                <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Launch demo modal
-                              </button>
-
-                              <!-- Modal -->
-                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <div class="card" style="width: 18rem;">
-                                        <img src="https://picsum.photos/200" class="card-img" alt="...">                                        <div class="card-body">
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                      </div>
-
-                                      <div class="card" style="width: 18rem;">
-                                        <img src="https://picsum.photos/200" class="card-img" alt="...">                                        <div class="card-body">
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                      </div>
-
-                                      <div class="card" style="width: 18rem;">
-                                        <img src="https://picsum.photos/200" class="card-img" alt="...">                                        <div class="card-body">
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                  </div>
+                        <!-- <div class="card mb-3 " style="max-width: 1000px;">
+                            <div class="row no-gutters">
+                                <div class=" col-md-4"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="https://picsum.photos/200"
+                                        class="card-img" alt="...">
                                 </div>
-                              </div>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+                                <div class="col-md-8"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <div class="card-body" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider
+                                            card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little
+                                            bit longer.</p>
 
-                <div class="card mb-3" style="max-width: 1000px;">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="https://picsum.photos/200" class="card-img" alt="...">
+                                        Button trigger modal 
+                                        <button type="button" class="btn
+                                            btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                            Launch demo modal
+                                        </button> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3" style="max-width: 1000px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="https://picsum.photos/200"
+                                        class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider
+                                            card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little
+                                            bit longer.</p>
+                                        <p class="card-text"><small
+                                                class="text-muted">Last updated
+                                                3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3" style="max-width: 1000px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="https://picsum.photos/200"
+                                        class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider
+                                            card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little
+                                            bit longer.</p>
+                                        <p class="card-text"><small
+                                                class="text-muted">Last updated
+                                                3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
+                </section>
+            </div>
+
+        </div>
+        <!-- Model section -->
+
+        <!-- Modal -->
+        <div class="modal fade"
+            id="exampleModal" tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog model-pos"
+                role="document">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"
+                            id="exampleModalLabel">Modal
+                            title</h5>
+                        <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                            <span
+                                aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                  </div>
+                    <div class=" row
+                        modal-body">
+                        <div class="card
+                            col-md-3"
+                            style="width:
+                            18rem;">
+                            <img
+                                src="https://picsum.photos/200"
+                                class="card-img"
+                                alt="..."> <div
+                                class="card-body">
+                                <p
+                                    class="card-text">Some
+                                    quick
+                                    example text
+                                    to build on
+                                    the card
+                                    title and
+                                    make up the
+                                    bulk of the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+
+                        <div class="card
+                            col-md-3"
+                            style="width:
+                            18rem;">
+                            <img
+                                src="https://picsum.photos/200"
+                                class="card-img"
+                                alt="..."> <div
+                                class="card-body">
+                                <p
+                                    class="card-text">Some
+                                    quick
+                                    example text
+                                    to build on
+                                    the card
+                                    title and
+                                    make up the
+                                    bulk of the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+
+                        <div class="card
+                            col-md-3"
+                            style="width:
+                            18rem;">
+                            <img
+                                src="https://picsum.photos/200"
+                                class="card-img"
+                                alt="..."> <div
+                                class="card-body">
+                                <p
+                                    class="card-text">Some
+                                    quick
+                                    example text
+                                    to build on
+                                    the card
+                                    title and
+                                    make up the
+                                    bulk of the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                            class="btn
+                            btn-secondary"
+                            data-dismiss="modal">Close</button>
+                        <button type="button"
+                            class="btn
+                            btn-primary">Save
+                            changes</button>
+                    </div>
                 </div>
-      
-                <div class="card mb-3" style="max-width: 1000px;">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="https://picsum.photos/200" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-          </div>
-        </section>
-     </div>
+            </div>
+        </div>
 
-     </div>
+        <!-- Model section ends here -->
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="assets/js/playlist.js"></script>
-    <script src="assets/js/runPlaylist.js"></script>
-    <script src="assets/js/app.js"></script>
-</body>
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="assets/js/playlist.js"></script>
+        <script src="assets/js/runPlaylist.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
 </html>

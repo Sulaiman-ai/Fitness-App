@@ -19,8 +19,8 @@ var playlist = [
 
 
 
-async function fetchApiData(UserId) {
-    return $.get(`${fetchApi}&key=${apiKey}&${UserId}`)
+async function fetchApiData(getPlayListId) {
+    return $.get(`${fetchApi}&key=${apiKey}&${getPlayListId}`)
         .then(resp => {
             console.log(resp);
             return resp;
@@ -54,7 +54,7 @@ async function fundamentalsSeries() {
     });
     domContainer.prepend(section);
 }
-fundamentalsSeries();
+// fundamentalsSeries();
 
 // Fully body work playlist item: Full Body Science Applied Workouts
 async function fullBodyWorkOut() {
@@ -84,7 +84,7 @@ async function fullBodyWorkOut() {
     });
     domContainer.append(section);
 }
-fullBodyWorkOut();
+// fullBodyWorkOut();
 
 // Fully body work playlist item: your lower part of your body
 async function benchPress() {
@@ -113,5 +113,5 @@ async function benchPress() {
     });
     domContainer.append(section);
 }
-benchPress();
+// benchPress();
 

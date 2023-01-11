@@ -1,5 +1,23 @@
+body {
+    background-color: lightgrey;
+}
+
 section {
-    border: solid 1px green;
-    margin: 20px 10px 20px 10px;
-    padding: 20px 10px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.card {
+    margin: 10px auto !important;
+
+}
+
+.modal-dialog {
+    max-width: 60%;
+}
+
+.model-pos {
+    top: 58px !important;
+    left: 104px !important;
 }

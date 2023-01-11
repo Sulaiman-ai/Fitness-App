@@ -39,7 +39,7 @@ async function lowIntensityWorkOut() {
     domContainer.after(section);
 }
 
-lowIntensityWorkOut();
+// lowIntensityWorkOut();
 
 // Nutrition and mood regulation 
 async function nutritianHelpRegulateMood() {
@@ -70,5 +70,5 @@ async function nutritianHelpRegulateMood() {
     domContainer.after(section);
 }
 
-nutritianHelpRegulateMood();
+// nutritianHelpRegulateMood();
 
