@@ -52,7 +52,7 @@ async function fundamentalsSeriesDOMoutPut() {
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">
-                                        This fundementles are dedicated to guiding, motivating and providing the tools necessary to transform people into the best version of themselves.
+                                        This fundementles are dedicated to guiding, motivating and providing the tools necessary to transform people into the best version of themselves. Prosence has created a muscle building guide to help you better understand the fundamentals of exercise and why you may want to consider it as part of your training regiment.
                                         
                                     
                                         
