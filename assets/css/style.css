@@ -15,7 +15,8 @@ section {
 }
 
 .card:hover {
-    box-shadow: 3px 3px red, -1em 0 .4em olive;
+    /* color: rgb(126, 5, 5); */
+    box-shadow: 0 5px 15px rgb(210, 189, 224) !important;
 }
 
 
