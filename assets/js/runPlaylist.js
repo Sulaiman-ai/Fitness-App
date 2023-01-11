@@ -28,9 +28,17 @@ async function lowIntensityWorkOut() {
         var title = el.snippet.title;
         var description = el.snippet.description;
 
+        var playListId = el.snippet.playlistId;
+        //console.log('id: ', playListId);
+        var videoId = el.snippet.resourceId.videoId;
+
+
         var videos = `
-        <iframe width="420" height="315" src='${emBedClip}'></iframe>
-        <h3>${title}</h3>
+        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
+                            <h4  class="card-text" >${title}</h4>
+                            </div>
+                        </div>
         `
         domContainer.append(videos);
     });
@@ -49,17 +57,24 @@ async function nutritianHelpRegulateMood() {
     // var tumbNail = ipareturnedData.items[0].snippet[0].thumbnails.standard.url;
     ipareturnedData.items.forEach((el) => {
 
-        console.log('print: ',
-            el
-        );
+        // console.log('print: ',
+        //     el
+        // );
 
         var emBedClip = youtube + el.snippet.resourceId.videoId;
         var title = el.snippet.title;
         var description = el.snippet.description;
+        var playListId = el.snippet.playlistId;
+        //console.log('id: ', playListId);
+        var videoId = el.snippet.resourceId.videoId;
+
 
         var videos = `
-        <iframe width="420" height="315" src='${emBedClip}'></iframe>
-        <h3>${title}</h3>
+        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
+                            <h4  class="card-text" >${title}</h4>
+                            </div>
+                        </div>
         `
         domContainer.append(videos);
     });

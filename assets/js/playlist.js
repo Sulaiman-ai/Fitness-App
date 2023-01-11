@@ -44,12 +44,12 @@ async function fundamentalsSeries() {
         var title = el.snippet.title;
         var description = el.snippet.description;
         var playListId = el.snippet.playlistId;
-        console.log('id: ', playListId);
-        var videoId = '';
+        //console.log('id: ', playListId);
+        var videoId = el.snippet.resourceId.videoId;
 
         var videos = `
-        <div class="card ${playListId} col-md-10" style="width: 18rem;">
-                            <iframe width="420" height="315" src='${emBedClip}'></iframe>
+        <div class="card ${playListId + " " + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
                         </div>
@@ -72,23 +72,28 @@ async function fullBodyWorkOut() {
     var domContainer = $('#modal-body');
     domContainer.html('');
 
-    var headerH1 = $('<h1></h1>').text(' FULL BODY Workout For Muscle Growth');
-    var section = $('<section></section');
-    section.prepend(headerH1);
     ipareturnedData.items.forEach((el) => {
         //console.log(el.snippet
         //);
-        console.log('print: ',
-            el
-        );
+        // console.log('print: ',
+        //     el
+        // );
 
         var emBedClip = youtube + el.snippet.resourceId.videoId;
         var title = el.snippet.title;
         var description = el.snippet.description;
 
+        var playListId = el.snippet.playlistId;
+        //console.log('id: ', playListId);
+        var videoId = el.snippet.resourceId.videoId;
+
+
         var videos = `
-        <iframe width="420" height="315" src='${emBedClip}'></iframe>
-        <h3>${title}</h3>
+        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
+                            <h4  class="card-text" >${title}</h4>
+                            </div>
+                        </div>
         `
         domContainer.append(videos);
     });
