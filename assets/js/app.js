@@ -28,7 +28,7 @@ async function fundamentalsSeriesDOMoutPut() {
 
     var searchkeyPexels = 'Muslce';
     var giphyApiData = await fetchPexelApiData(pexelApiKey, searchkeyPexels);
-    console.log(giphyApiData);
+    // console.log(giphyApiData);
     // var image = giphyApiData.data[0].url;
     var pushToMainCont = $('#main');
 
@@ -37,20 +37,20 @@ async function fundamentalsSeriesDOMoutPut() {
     // console.log(image);
     var image = giphyApiData[8].src.original;
     var PexelAlt = giphyApiData[8].alt;
-    console.log(image);
+    // console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
     // data-toggle="modal" data-target="#exampleModal"
     var videos = `
-        <div class="card cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div id="fundSeries" class="card fundSeries cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" >
                                
                                   <img src="${image}" class="card-img" alt="${PexelAlt}"> 
                                     
                                 </div>
-                                <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                                <div class="col-md-8">
+                                    <div class="card-body" >
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">
                                         
@@ -70,8 +70,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     var ipareturnedData = await fetchApiData(runingPlayList[1].playlistId);
     var searchkeyPexels = 'nutritionist';
     var giphyApiData = await fetchPexelApiData(pexelApiKey, searchkeyPexels);
-    console.log(giphyApiData
-    );
+    // console.log(giphyApiData );
     // var image = giphyApiData.data[0].url;
     var pushToMainCont = $('#main');
 
@@ -80,19 +79,19 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     // console.log(image);
     var image = giphyApiData[14].src.tiny;
     var PexelAlt = giphyApiData[14].alt;
-    console.log(image);
+    // console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div class="card  cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
-                                <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
+                                <div class=" col-md-4" >
                                   <img src="${image}" class="card-img" alt="${PexelAlt}"> 
                                     
                                 </div>
-                                <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                                <div class="col-md-8" >
+                                    <div class="card-body">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">A good nutrition is important for our mental health. Checkout these anti-inflamatory recipes.</p>
                                     </div>
@@ -104,13 +103,13 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
 
 }
 
+
 async function lowIntensityWorkOutDOMoutPut() {
     var ipareturnedData = await fetchApiData(runingPlayList[0].playlistId);
 
     var searchkeyPexels = 'running';
     var giphyApiData = await fetchPexelApiData(pexelApiKey, searchkeyPexels);
-    console.log(giphyApiData
-    );
+    console.log(giphyApiData);
     // var image = giphyApiData.data[0].url;
     var pushToMainCont = $('#main');
 
@@ -119,19 +118,19 @@ async function lowIntensityWorkOutDOMoutPut() {
     // console.log(image);
     var image = giphyApiData[0].src.tiny;
     var PexelAlt = giphyApiData[0].alt;
-    console.log(image);
+    // console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card cardOptions  shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div class="card cardOptions  shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
-                                <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
+                                <div class=" col-md-4" >
                                   <img src="${image}" class="card-img" alt="..."> 
                                     
                                 </div>
-                                <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                                <div class="col-md-8" >
+                                    <div class="card-body">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">Want to improve your self-confidence, your mental health or strengthen your muscles? See what jogging 30 minutes a day can do for you.</p>
                                     </div>
@@ -158,19 +157,19 @@ async function fullBodyWorkOutDOMoutPut() {
     //     .url;
     // console.log(image);
     var image = giphyApiData[0].src.tiny;
-    console.log(image);
+    // console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
 
     var videos = `
-        <div id="firstquestion" class="card cardOptions shadow mb-3 bg-white rounded " style="max-width: 1000px;">
+        <div id="firstquestion" class="card cardOptions shadow mb-3 bg-white rounded " style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
-                                <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
+                                <div class=" col-md-4">
                                   <img src="${image}" class="card-img" alt="..."> 
                                     
                                 </div>
-                                <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                                <div class="col-md-8" >
+                                    <div class="card-body">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">Whether you're a bodybuilder of any level, are underweight, or want to build muscle following an injury or illness, a total-body workout can help you gain muscle and strength.</p>
                                     </div>
@@ -189,16 +188,6 @@ async function init() {
     await nutritianHelpRegulateMoodDOMoutPut();
     await lowIntensityWorkOutDOMoutPut();
     await fullBodyWorkOutDOMoutPut();
-    createCards();
+
 };
 init();
-
-
-
-
-
-// $(".card").click(function (e) {
-//     e.preventDefault();
-
-
-// })

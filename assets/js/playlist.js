@@ -42,20 +42,24 @@ async function fundamentalsSeries() {
         console.log(emBedClip);
         var title = el.snippet.title;
         var description = el.snippet.description;
+        var playListId = el.snippet.playlistId;
+        console.log('id: ', playListId);
+        var videoId = '';
 
         var videos = `
-        <div class="card col-md-3" style="width: 18rem;">
-                            <iframe width="220" height="115" src='${emBedClip}'></iframe>
+        <div class="card col-md-10" style="width: 18rem;">
+                            <iframe width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
                         </div>
 
         `
-        section.append(videos);
+        domContainer.append(videos);
     });
-    domContainer.prepend(section);
+
 }
-fundamentalsSeries();
+
+
 
 // Fully body work playlist item: Full Body Science Applied Workouts
 
