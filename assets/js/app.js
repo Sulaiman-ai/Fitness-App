@@ -42,7 +42,7 @@ async function fundamentalsSeriesDOMoutPut() {
     // // var description = el.snippet.description;
     // data-toggle="modal" data-target="#exampleModal"
     var videos = `
-        <div id="fundSeries" class="card fundSeries cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
+        <div id="fundSeries" onclick="fundamentalsSeries()" class="card fundSeries cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" >
                                
@@ -84,7 +84,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card  cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
+        <div onclick=" nutritianHelpRegulateMood()" class="card  cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" >
                                   <img src="${image}" class="card-img" alt="${PexelAlt}"> 
@@ -123,7 +123,7 @@ async function lowIntensityWorkOutDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card cardOptions  shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
+        <div onclick="lowIntensityWorkOut()" class="card cardOptions  shadow mb-3 bg-white rounded" style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" >
                                   <img src="${image}" class="card-img" alt="..."> 
@@ -141,7 +141,6 @@ async function lowIntensityWorkOutDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-
 
 async function fullBodyWorkOutDOMoutPut() {
     var ipareturnedData = await fetchApiData(playlist[1].playlistId);
@@ -162,7 +161,7 @@ async function fullBodyWorkOutDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div id="firstquestion" class="card cardOptions shadow mb-3 bg-white rounded " style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
+        <div id="firstquestion" onclick="fullBodyWorkOut()" class="card cardOptions shadow mb-3 bg-white rounded " style="max-width: 1000px;" data-toggle="modal" data-target="#exampleModal">
                             <div class="row no-gutters">
                                 <div class=" col-md-4">
                                   <img src="${image}" class="card-img" alt="..."> 
@@ -191,3 +190,27 @@ async function init() {
 
 };
 init();
+
+
+// window.load = (function () {
+//     alert('page is loaded');
+
+//     // setTimeout(function () {
+//     //     alert('page is loaded and 1 minute has passed');   
+//     // }, 60000);
+
+
+
+// });
+
+
+// if (document.querySelector("#fundSeries")) {
+//     alert("Element exists");
+// } else {
+//     alert("Element does not exist");
+// }
+
+
+
+
+

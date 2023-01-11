@@ -30,6 +30,7 @@ async function fundamentalsSeries() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
     // console.log(for Object.values(ipareturnedData.items));
     var domContainer = $('#modal-body');
+    domContainer.html(' ');
 
     ipareturnedData.items.forEach((el) => {
         //console.log(el.snippet
@@ -47,7 +48,7 @@ async function fundamentalsSeries() {
         var videoId = '';
 
         var videos = `
-        <div class="card col-md-10" style="width: 18rem;">
+        <div class="card ${playListId} col-md-10" style="width: 18rem;">
                             <iframe width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
@@ -67,7 +68,10 @@ async function fullBodyWorkOut() {
     var ipareturnedData = await fetchApiData(playlist[1].playlistId);
     // console.log(for Object.values(ipareturnedData.items));
 
-    var domContainer = $('.cotainer');
+
+    var domContainer = $('#modal-body');
+    domContainer.html('');
+
     var headerH1 = $('<h1></h1>').text(' FULL BODY Workout For Muscle Growth');
     var section = $('<section></section');
     section.prepend(headerH1);
@@ -86,9 +90,8 @@ async function fullBodyWorkOut() {
         <iframe width="420" height="315" src='${emBedClip}'></iframe>
         <h3>${title}</h3>
         `
-        section.append(videos);
+        domContainer.append(videos);
     });
-    domContainer.append(section);
 }
 // fullBodyWorkOut();
 
