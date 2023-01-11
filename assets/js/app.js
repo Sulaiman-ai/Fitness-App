@@ -51,11 +51,12 @@ async function fundamentalsSeriesDOMoutPut() {
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
-                                        <p class="card-text">This is a wider
-                                            card with supporting text below as a
-                                            natural lead-in to additional
-                                            content. This content is a little
-                                            bit longer.</p>
+                                        <p class="card-text">
+                                        This fundementles are dedicated to guiding, motivating and providing the tools necessary to transform people into the best version of themselves.
+                                        
+                                    
+                                        
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -64,10 +65,6 @@ async function fundamentalsSeriesDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-
-
-
-
 
 async function nutritianHelpRegulateMoodDOMoutPut() {
     var ipareturnedData = await fetchApiData(runingPlayList[1].playlistId);
@@ -110,10 +107,6 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-
-
-
-
 
 async function lowIntensityWorkOutDOMoutPut() {
     var ipareturnedData = await fetchApiData(runingPlayList[0].playlistId);
