@@ -54,7 +54,7 @@ async function fundamentalsSeries() {
     });
     domContainer.prepend(section);
 }
-fundamentalsSeries();
+// fundamentalsSeries();
 
 // Fully body work playlist item: Full Body Science Applied Workouts
 async function fullBodyWorkOut() {
