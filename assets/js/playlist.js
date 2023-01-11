@@ -30,9 +30,7 @@ async function fundamentalsSeries() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
     // console.log(for Object.values(ipareturnedData.items));
     var domContainer = $('#modal-body');
-    var headerH1 = $('<h1></h1>').text('Fundamentals Series');
-    var section = $('<section></section');
-    section.prepend(headerH1);
+
     ipareturnedData.items.forEach((el) => {
         //console.log(el.snippet
         //);
@@ -46,11 +44,9 @@ async function fundamentalsSeries() {
         var description = el.snippet.description;
 
         var videos = `
-        <div class="card
-                            col-md-3" style="width:
-                            18rem;">
-                            <iframe width="420" height="315" src='${emBedClip}'></iframe>
-                            <h3>${title}</h3>
+        <div class="card col-md-3" style="width: 18rem;">
+                            <iframe width="220" height="115" src='${emBedClip}'></iframe>
+                            <h4  class="card-text" >${title}</h4>
                             </div>
                         </div>
 

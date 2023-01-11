@@ -40,11 +40,12 @@ async function fundamentalsSeriesDOMoutPut() {
     console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
-
+    // data-toggle="modal" data-target="#exampleModal"
     var videos = `
-        <div class="card shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div class="card cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;">
                             <div class="row no-gutters">
-                                <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
+                                <div class=" col-md-4" >
+                               
                                   <img src="${image}" class="card-img" alt="${PexelAlt}"> 
                                     
                                 </div>
@@ -85,7 +86,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div class="card cardOptions shadow mb-3 bg-white rounded" style="max-width: 1000px;">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
                                   <img src="${image}" class="card-img" alt="${PexelAlt}"> 
@@ -128,7 +129,7 @@ async function lowIntensityWorkOutDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card shadow mb-3 bg-white rounded" style="max-width: 1000px;">
+        <div class="card cardOptions  shadow mb-3 bg-white rounded" style="max-width: 1000px;">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
                                   <img src="${image}" class="card-img" alt="..."> 
@@ -171,7 +172,7 @@ async function fullBodyWorkOutDOMoutPut() {
     // // var description = el.snippet.description;
 
     var videos = `
-        <div class="card shadow mb-3 bg-white rounded " style="max-width: 1000px;">
+        <div id="firstquestion" class="card cardOptions shadow mb-3 bg-white rounded " style="max-width: 1000px;">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
                                   <img src="${image}" class="card-img" alt="..."> 
@@ -196,10 +197,21 @@ async function fullBodyWorkOutDOMoutPut() {
 
 
 // This function will load once the button is clicked
-function init() {
-    fundamentalsSeriesDOMoutPut();
-    nutritianHelpRegulateMoodDOMoutPut();
-    lowIntensityWorkOutDOMoutPut();
-    fullBodyWorkOutDOMoutPut();
+async function init() {
+    await fundamentalsSeriesDOMoutPut();
+    await nutritianHelpRegulateMoodDOMoutPut();
+    await lowIntensityWorkOutDOMoutPut();
+    await fullBodyWorkOutDOMoutPut();
+    createCards();
 };
-init()
+init();
+
+
+
+
+
+// $(".card").click(function (e) {
+//     e.preventDefault();
+
+
+// })
