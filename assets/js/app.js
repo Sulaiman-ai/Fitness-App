@@ -6,8 +6,8 @@ var giphyBaseUrl = 'http://api.giphy.com/v1/gifs/search?'
 var pexelApiKey = '563492ad6f91700001000001f9159f2f3b3945ec9be0440bb7301e28';
 pexelBaseUrl = 'https://api.pexels.com/v1/search?';
 
-async function fetchPexelApiData(giphyKey) {
-    return fetch(`${pexelBaseUrl}query=Muslces`,
+async function fetchPexelApiData(giphyKey, searchKey) {
+    return fetch(`${pexelBaseUrl}query=${searchKey}`,
         {
             headers: {
                 Authorization: giphyKey
@@ -29,9 +29,9 @@ async function fetchPexelApiData(giphyKey) {
 async function fundamentalsSeriesDOMoutPut() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
 
-    var giphyApiData = await fetchPexelApiData(pexelApiKey);
-    console.log(giphyApiData
-    );
+    var searchkeyPexels = 'Muslce';
+    var giphyApiData = await fetchPexelApiData(pexelApiKey, searchkeyPexels);
+    console.log(giphyApiData);
     // var image = giphyApiData.data[0].url;
     var pushToMainCont = $('#main');
 
@@ -39,6 +39,7 @@ async function fundamentalsSeriesDOMoutPut() {
     //     .url;
     // console.log(image);
     var image = giphyApiData[0].src.original;
+    var PexelAlt = giphyApiData[0].alt;
     console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
@@ -47,7 +48,7 @@ async function fundamentalsSeriesDOMoutPut() {
         <div class="card mb-3 " style="max-width: 1000px;">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
-                                  <img src="${image}" class="card-img" alt="..."> 
+                                  <img src="${image}" class="card-img" alt="${PexelAlt}"> 
                                     
                                 </div>
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
@@ -66,15 +67,15 @@ async function fundamentalsSeriesDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-fundamentalsSeriesDOMoutPut();
+
 
 
 
 
 async function nutritianHelpRegulateMoodDOMoutPut() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
-
-    var giphyApiData = await fetchPexelApiData(pexelApiKey);
+    var searchkeyPexels = 'Muslce';
+    var giphyApiData = await fetchPexelApiData(pexelApiKey, searchkeyPexels);
     console.log(giphyApiData
     );
     // var image = giphyApiData.data[0].url;
@@ -84,6 +85,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     //     .url;
     // console.log(image);
     var image = giphyApiData[0].src.original;
+    var PexelAlt = giphyApiData[0].alt;
     console.log(image);
     var title = ipareturnedData.items[0].snippet.title;
     // // var description = el.snippet.description;
@@ -92,7 +94,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
         <div class="card mb-3 " style="max-width: 1000px;">
                             <div class="row no-gutters">
                                 <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
-                                  <img src="${image}" class="card-img" alt="..."> 
+                                  <img src="${image}" class="card-img" alt="${PexelAlt}"> 
                                     
                                 </div>
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
@@ -111,7 +113,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-nutritianHelpRegulateMoodDOMoutPut();
+
 
 
 
@@ -156,7 +158,7 @@ async function lowIntensityWorkOutDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-nutritianHelpRegulateMoodDOMoutPut();
+
 
 async function fullBodyWorkOutDOMoutPut() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
@@ -198,5 +200,12 @@ async function fullBodyWorkOutDOMoutPut() {
     pushToMainCont.append(videos);
 
 }
-fullBodyWorkOutDOMoutPut();
 
+
+// This function will load once the button is clicked
+function init() {
+    fundamentalsSeriesDOMoutPut();
+    // nutritianHelpRegulateMoodDOMoutPut();
+    // lowIntensityWorkOutDOMoutPut();
+    // fullBodyWorkOutDOMoutPut();
+};
