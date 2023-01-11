@@ -17,8 +17,6 @@ var playlist = [
     }
 ];
 
-
-
 async function fetchApiData(getPlayListId) {
     return $.get(`${fetchApi}&key=${apiKey}&${getPlayListId}`)
         .then(resp => {
@@ -31,7 +29,7 @@ async function fetchApiData(getPlayListId) {
 async function fundamentalsSeries() {
     var ipareturnedData = await fetchApiData(playlist[0].playlistId);
     // console.log(for Object.values(ipareturnedData.items));
-    var domContainer = $('.cotainer');
+    var domContainer = $('#modal-body');
     var headerH1 = $('<h1></h1>').text('Fundamentals Series');
     var section = $('<section></section');
     section.prepend(headerH1);
@@ -43,20 +41,28 @@ async function fundamentalsSeries() {
         );
 
         var emBedClip = youtube + el.snippet.resourceId.videoId;
+        console.log(emBedClip);
         var title = el.snippet.title;
         var description = el.snippet.description;
 
         var videos = `
-        <iframe width="420" height="315" src='${emBedClip}'></iframe>
-        <h3>${title}</h3>
+        <div class="card
+                            col-md-3" style="width:
+                            18rem;">
+                            <iframe width="420" height="315" src='${emBedClip}'></iframe>
+                            <h3>${title}</h3>
+                            </div>
+                        </div>
+
         `
         section.append(videos);
     });
     domContainer.prepend(section);
 }
-// fundamentalsSeries();
+fundamentalsSeries();
 
 // Fully body work playlist item: Full Body Science Applied Workouts
+
 async function fullBodyWorkOut() {
     var ipareturnedData = await fetchApiData(playlist[1].playlistId);
     // console.log(for Object.values(ipareturnedData.items));
@@ -87,32 +93,32 @@ async function fullBodyWorkOut() {
 // fullBodyWorkOut();
 
 // Fully body work playlist item: your lower part of your body
-async function benchPress() {
-    var ipareturnedData = await fetchApiData(playlist[2].playlistId);
-    console.log('Bench press:  ' + Object.values(ipareturnedData.items));
-    var domContainer = $('.cotainer');
-    var headerH1 = $('<h1></h1>').text('PUSH Workout: Chest, Shoulders & Triceps');
-    var section = $('<section></section');
-    section.prepend(headerH1);
-    ipareturnedData.items.forEach((el) => {
-        //console.log(el.snippet
-        //);
-        console.log('print: ',
-            el
-        );
+// async function benchPress() {
+//     var ipareturnedData = await fetchApiData(playlist[2].playlistId);
+//     console.log('Bench press:  ' + Object.values(ipareturnedData.items));
+//     var domContainer = $('.cotainer');
+//     var headerH1 = $('<h1></h1>').text('PUSH Workout: Chest, Shoulders & Triceps');
+//     var section = $('<section></section');
+//     section.prepend(headerH1);
+//     ipareturnedData.items.forEach((el) => {
+//         //console.log(el.snippet
+//         //);
+//         console.log('print: ',
+//             el
+//         );
 
-        var emBedClip = youtube + el.snippet.resourceId.videoId;
-        var title = el.snippet.title;
-        var description = el.snippet.description;
+//         var emBedClip = youtube + el.snippet.resourceId.videoId;
+//         var title = el.snippet.title;
+//         var description = el.snippet.description;
 
-        var videos = `
-        <iframe width="420" height="315" src='${emBedClip}'></iframe>
-        <h3>${title}</h3>
-        `
-        section.append(videos);
-    });
-    domContainer.append(section);
-}
+//         var videos = `
+//         <iframe width="420" height="315" src='${emBedClip}'></iframe>
+//         <h3>${title}</h3>
+//         `
+//         section.append(videos);
+//     });
+//     domContainer.append(section);
+// }
 // benchPress();
 
 

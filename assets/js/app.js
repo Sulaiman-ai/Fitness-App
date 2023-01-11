@@ -52,7 +52,6 @@ async function fundamentalsSeriesDOMoutPut() {
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">
-                                        This series is dedicated to guiding, motivating and providing the necessary tools to transform you into your best version.
                                         
                                     
                                         
