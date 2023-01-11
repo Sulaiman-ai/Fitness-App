@@ -10,8 +10,14 @@ section {
 
 .card {
     margin: 10px auto !important;
+    cursor: pointer;
 
 }
+
+.card:hover {
+    box-shadow: 3px 3px red, -1em 0 .4em olive;
+}
+
 
 .modal-dialog {
     max-width: 60%;
@@ -20,4 +26,8 @@ section {
 .model-pos {
     top: 58px !important;
     left: 104px !important;
+}
+
+.card-title {
+    color: #7b6948;
 }
