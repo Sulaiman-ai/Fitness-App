@@ -52,7 +52,7 @@ async function fundamentalsSeriesDOMoutPut() {
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">
-                                        This fundementles are dedicated to guiding, motivating and providing the tools necessary to transform people into the best version of themselves.
+                                        This series is dedicated to guiding, motivating and providing the necessary tools to transform you into your best version.
                                         
                                     
                                         
@@ -94,11 +94,7 @@ async function nutritianHelpRegulateMoodDOMoutPut() {
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
-                                        <p class="card-text">This is a wider
-                                            card with supporting text below as a
-                                            natural lead-in to additional
-                                            content. This content is a little
-                                            bit longer.</p>
+                                        <p class="card-text">A good nutrition is important for our mental health. Checkout these anti-inflamatory recipes.</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,11 +133,7 @@ async function lowIntensityWorkOutDOMoutPut() {
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
-                                        <p class="card-text">This is a wider
-                                            card with supporting text below as a
-                                            natural lead-in to additional
-                                            content. This content is a little
-                                            bit longer.</p>
+                                        <p class="card-text">Want to improve your self-confidence, your mental health or strengthen your muscles? See what jogging 30 minutes a day can do for you.</p>
                                     </div>
                                 </div>
                             </div>
@@ -180,11 +172,7 @@ async function fullBodyWorkOutDOMoutPut() {
                                 <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
                                     <div class="card-body" data-toggle="modal" data-target="#exampleModal">
                                         <h5 class="card-title">${title}</h5>
-                                        <p class="card-text">This is a wider
-                                            card with supporting text below as a
-                                            natural lead-in to additional
-                                            content. This content is a little
-                                            bit longer.</p>
+                                        <p class="card-text">Whether you're a bodybuilder of any level, are underweight, or want to build muscle following an injury or illness, a total-body workout can help you gain muscle and strength.</p>
                                     </div>
                                 </div>
                             </div>
