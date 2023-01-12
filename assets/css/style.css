@@ -37,3 +37,15 @@ iframe {
     width: 100%;
     height: 500px;
 }
+
+a.logo {
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    button.btn-block {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
