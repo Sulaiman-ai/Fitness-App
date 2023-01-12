@@ -50,7 +50,7 @@ function getAndSetPorpertiesToDom() {
     locallyStoredIds.forEach(items => {
         console.log(items);
         console.log(items.videoId);
-        $(`button.${items.videoId}`).css({ "background": "red" });
+        $(`button.${items.videoId}`).css({ "background": "green" });
 
     });
 }
