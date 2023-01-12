@@ -211,6 +211,16 @@ init();
 // }
 
 
+function getLocaStorageItem() {
+    return JSON.parse(localStorage.getItem('PlayListWatched')) || [];
+}
+
+// var localstoredItem = getLocaStorageItem();
+// console.log('consoling out local storange: ', localstoredItem);
+
+var modalBody = $('#modal-body');
+console.log(modalBody);
+
 
 
 

@@ -34,7 +34,8 @@ async function lowIntensityWorkOut() {
 
 
         var videos = `
-        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+        <div class="card modalCards ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
                             <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
@@ -42,6 +43,7 @@ async function lowIntensityWorkOut() {
         `
         domContainer.append(videos);
     });
+    eventListenerForLocalStorage();
 }
 
 // lowIntensityWorkOut();
@@ -70,7 +72,8 @@ async function nutritianHelpRegulateMood() {
 
 
         var videos = `
-        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+        <div class="card modalCards ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+                            <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
                             <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
@@ -78,8 +81,9 @@ async function nutritianHelpRegulateMood() {
         `
         domContainer.append(videos);
     });
-
+    eventListenerForLocalStorage();
 }
 
 // nutritianHelpRegulateMood();
+
 

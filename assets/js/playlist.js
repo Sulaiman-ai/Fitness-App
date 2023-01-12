@@ -3,8 +3,53 @@ var youtube = 'https://www.youtube.com/embed/';
 var fetchApi = 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet'
 var otherSearchParameters = 'videoType=videoTypeUnspecified'
 
+
+// Local storage checks
+
+function getLocaStorageItem() {
+    return JSON.parse(localStorage.getItem('PlayListWatched')) || [];
+}
+
+// Setting Local storage
+function LocaStorageItem(ItemRecieved) {
+    localStorage.setItem('PlayListWatched', JSON.stringify(ItemRecieved));
+}
+
+
+// adding stuff to local storage once clicked
+function eventListenerForLocalStorage() {
+    var watchedButton = $('button#watched');
+
+    watchedButton.on("click", function (event) {
+        event.preventDefault();
+        var isThereItemInLocoStorage = getLocaStorageItem();
+        var localStorangeArr = [];
+
+        var className = $(this).attr('class');
+        var videoPlayId = className.split(' ')[0];
+        var watchedId = className.split(' ')[1];
+
+        var itemsToStore = {
+            'videoPlayId': videoPlayId,
+            'videoId': watchedId
+        }
+
+        isThereItemInLocoStorage.push(itemsToStore)
+        LocaStorageItem(isThereItemInLocoStorage)
+
+        // alert(videoPlayId + " " + watchedId);
+
+    });
+}
+
+// function WatchedButton() {
+//     ` <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>`
+// }
+
+
 // building muscles: https://www.youtube.com/@JeffNippard
 // We are going for three types of playlist for building body mass
+// PlayListId key that would be used to get the clips
 var playlist = [
     {
         'playlistId': 'playlistId=PLp4G6oBUcv8yxB4H2Y7IdOjst78R9UmCg'
@@ -17,6 +62,7 @@ var playlist = [
     }
 ];
 
+// as the name suggest its an api reqester/fetter
 async function fetchApiData(getPlayListId) {
     return $.get(`${fetchApi}&key=${apiKey}&${getPlayListId}`)
         .then(resp => {
@@ -35,9 +81,7 @@ async function fundamentalsSeries() {
     ipareturnedData.items.forEach((el) => {
         //console.log(el.snippet
         //);
-        console.log('Running low intensity workout print: ',
-            el
-        );
+        // console.log('Running low intensity workout print: ',el );
 
         var emBedClip = youtube + el.snippet.resourceId.videoId;
         console.log(emBedClip);
@@ -47,9 +91,13 @@ async function fundamentalsSeries() {
         //console.log('id: ', playListId);
         var videoId = el.snippet.resourceId.videoId;
 
+        // building DOM HTML cards
         var videos = `
-        <div class="card ${playListId + " " + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
-                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
+        <div class="card modalCards ${playListId + " " + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+         <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
+                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'>   
+                           
+                            </iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
                         </div>
@@ -58,9 +106,24 @@ async function fundamentalsSeries() {
         domContainer.append(videos);
     });
 
+
+    // Call the local storange event function 
+    eventListenerForLocalStorage();
+
+    // Currently working on
+    // var locallyStoredIds = getLocaStorageItem();
+    // locallyStoredIds.forEach(items => {
+    //     console.log(items);
+    //     console.log(items.videoId);
+    //     $(items.videoId).css({ "background": "red" });
+
+
+
+    // });
+
+
+
 }
-
-
 
 // Fully body work playlist item: Full Body Science Applied Workouts
 
@@ -89,7 +152,8 @@ async function fullBodyWorkOut() {
 
 
         var videos = `
-        <div class="card ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+        <div class="card modalCards ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+        <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
                             <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
@@ -97,6 +161,8 @@ async function fullBodyWorkOut() {
         `
         domContainer.append(videos);
     });
+
+    eventListenerForLocalStorage();
 }
 // fullBodyWorkOut();
 
