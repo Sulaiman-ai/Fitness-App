@@ -32,3 +32,8 @@ section {
 .card-title {
     color: #7b6948;
 }
+
+iframe {
+    width: 100%;
+    height: 500px;
+}
