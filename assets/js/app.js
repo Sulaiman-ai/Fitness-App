@@ -189,7 +189,12 @@ async function init() {
     await fullBodyWorkOutDOMoutPut();
 
 };
-init();
+// init();
+
+$("#exercise-routine-btn").click(function(){
+    $("#main").html("")
+    init()
+})
 
 
 // window.load = (function () {
