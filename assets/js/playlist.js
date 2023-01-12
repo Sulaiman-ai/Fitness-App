@@ -39,9 +39,22 @@ function eventListenerForLocalStorage() {
 
         // alert(videoPlayId + " " + watchedId);
 
+        getAndSetPorpertiesToDom();
     });
+
+    getAndSetPorpertiesToDom();
 }
 
+function getAndSetPorpertiesToDom() {
+    var locallyStoredIds = getLocaStorageItem();
+    locallyStoredIds.forEach(items => {
+        console.log(items);
+        console.log(items.videoId);
+        $(`button.${items.videoId}`).css({ "background": "red" });
+
+    });
+}
+getAndSetPorpertiesToDom();
 // function WatchedButton() {
 //     ` <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>`
 // }
@@ -109,20 +122,6 @@ async function fundamentalsSeries() {
 
     // Call the local storange event function 
     eventListenerForLocalStorage();
-
-    // Currently working on
-    // var locallyStoredIds = getLocaStorageItem();
-    // locallyStoredIds.forEach(items => {
-    //     console.log(items);
-    //     console.log(items.videoId);
-    //     $(items.videoId).css({ "background": "red" });
-
-
-
-    // });
-
-
-
 }
 
 // Fully body work playlist item: Full Body Science Applied Workouts
