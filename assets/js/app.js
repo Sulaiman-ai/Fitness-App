@@ -191,7 +191,7 @@ async function init() {
 };
 // init();
 
-$("#exercise-routine-btn").click(function(){
+$("#exercise-routine-btn").click(function () {
     $("#main").html("")
     init()
 })

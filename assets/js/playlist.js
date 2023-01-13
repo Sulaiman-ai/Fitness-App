@@ -50,7 +50,7 @@ function getAndSetPorpertiesToDom() {
     locallyStoredIds.forEach(items => {
         console.log(items);
         console.log(items.videoId);
-        $(`button.${items.videoId}`).css({ "background": "green" });
+        $(`button.${items.videoId}`).css({ "background": "red" });
 
     });
 }
@@ -106,9 +106,9 @@ async function fundamentalsSeries() {
 
         // building DOM HTML cards
         var videos = `
-        <div class="card modalCards ${playListId + " " + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
+        <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
          <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'>   
+                            <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
                            
                             </iframe>
                             <h4  class="card-text" >${title}</h4>
@@ -151,9 +151,11 @@ async function fullBodyWorkOut() {
 
 
         var videos = `
-        <div class="card modalCards ${playListId + ' ' + videoId} col-md-10" id="${playListId}"  style="width: 20rem;">
-        <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                            <iframe class="${videoId}"  id="${videoId}" width="420" height="315" src='${emBedClip}'></iframe>
+        <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
+         <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
+                            <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
+                           
+                            </iframe>
                             <h4  class="card-text" >${title}</h4>
                             </div>
                         </div>
