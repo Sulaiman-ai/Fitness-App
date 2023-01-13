@@ -48,13 +48,13 @@ function createCard(number, thumbnailURL, title, caption){
 
 categories = [
     {heading: "Exercise",
-    thumbnail: "",
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTgPx0siuRGE6tdeqq080yhX84qQMfIvWfTQ&usqp=CAU",
     caption: "Various exercise to meet different targets"},
     // {heading: "Mental Health",
     // thumbnail: "",
     // caption: "Tips for managing mental health"},
     {heading:"Dieting",
-    thumbnail: "",
+    thumbnail: "https://stevegranthealth.com/wp-content/uploads/flexible-dieating-for-weight-loss-min-scaled.jpg",
     caption: "Information on different diet types"}
 ]
 
