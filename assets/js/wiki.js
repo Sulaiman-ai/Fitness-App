@@ -46,6 +46,32 @@ function createCard(number, thumbnailURL, title, caption){
 
 // thumbnailURL = "https://en.wikipedia.org/w/api.php?action=query&titles=pizza&prop=pageimages&format=json&pithumbsize=100"
 
+categories = [
+    {heading: "Exercise",
+    thumbnail: "",
+    caption: "Various exercise to meet different targets"},
+    // {heading: "Mental Health",
+    // thumbnail: "",
+    // caption: "Tips for managing mental health"},
+    {heading:"Dieting",
+    thumbnail: "",
+    caption: "Information on different diet types"}
+]
+
+function generateCategoryCards(categories){
+    html = "";
+    for (const category of categories){
+        html += createCategoryCard(category.thumbnail, category.heading, category.caption)
+    }
+    return html;
+}
+
+article_titles = {
+    Exercise: ["Aerobics", "Calisthenics", "Strength_training", "Pilates"],
+    // "Mental Health": ["Mindfulness"],
+    Dieting: ["Food_group", "Low-carbohydrate_diet", "Mediterranean_diet"]
+}
+
 titles = ["Food_group", "Aerobics", "Weight_loss"]
 
 async function wikiDataList(titles){
@@ -57,21 +83,16 @@ async function wikiDataList(titles){
         await getWikiData(title).then((data)=>{
             html = data.html;
             pageID = data.pageID;
-            console.log(title)
-            console.log(pageID)
+            link = `https://en.wikipedia.org/wiki/${title}`
             
             return getThumbnail(title, pageID).then((url)=>{
                 thumbnailSRC = url;
-                wikiObj = {header, html, pageID, thumbnailSRC}
+                wikiObj = {header, html, pageID, thumbnailSRC, link}
                 // wikiData.push({title:"title", html:"html", pageID:"pageID", thumbnailSRC:"thumbnailSRC"})
                 wikiData.push(wikiObj);
-                console.log("just pushed")
             })
         });
-        console.log(wikiData)
-        console.log(wikiData.length)
     }
-    console.log("loop finish")
     // wikiData.push({title:"title", html:"html", pageID:"pageID", thumbnailSRC:"thumbnailSRC"})
     // wikiData.shift()
     // console.log(wikiData)
@@ -82,7 +103,6 @@ async function wikiDataList(titles){
 async function getWikiData(title){
     console.log(title)
     url = getURL(title)
-    console.log(url)
     let html;
     let pageID;
     const wikiPromise = new Promise((resolve, reject) => {
@@ -93,7 +113,7 @@ async function getWikiData(title){
             console.log("data", data)
             let thumbnailSRC;
 
-            console.log(data)
+            console.log("data", data)
 
             // thumbnailSRC = getThumbnail(title, pageID);
             // getThumbnail(title, pageID).then((data)=>{
@@ -113,10 +133,6 @@ async function getThumbnail(title, pageID){
     console.log(thumbnailURL)
     thumbnailPromise = new Promise((resolve, reject) =>{
         $.get(thumbnailURL + '&origin=*', function( data ) {
-            console.log(data)
-            console.log(title)
-            console.log(pageID);
-            console.log(data.query.pages)
             thumbnailSRC = data.query.pages[pageID].thumbnail.source;
             resolve(thumbnailSRC)
         })
@@ -126,27 +142,24 @@ async function getThumbnail(title, pageID){
 };
 
 
-async function generateCards(number){
+async function generateCards(titles){
     wikiData = await wikiDataList(titles)
-    console.log(wikiData["0"])
-    console.log(wikiData.length)
+    console.log(wikiData)
     html = "";
     for (i=0; i<wikiData.length; i++){
         article = wikiData[i];
-        html += createWikiCard(article.thumbnailSRC, article.header, getCaption(article.html))
+        html += createWikiCard(article.thumbnailSRC, article.header, getCaption(article.html), article.link)
     }
     // wikiData.forEach((article)=>{
-    //     console.log("hello")
     //     console.log(createWikiCard(article.thumbnailSRC, article.title, "caption"))
     //     html += createWikiCard(article.thumbnailSRC, article.title, "caption")
     // })
-    console.log(html)
     return html;
 }
 
-function loadCards(html){
-    console.log(html)
-    $("#main").html(html)
+function loadCards(container, html){
+    $(container).html(html)
+    // $('#modal-body').html(html)
 }
 
 // console.log(wikiDataList(titles))
@@ -159,8 +172,37 @@ async function showCards(){
 
 $("#articles-btn").click(function(){
     $("#main").html("")
-    showCards()
+    html = generateCategoryCards(categories);
+    loadCards("#main", html)
+    // showCards()
+    categoryListeners();
+    
 })
+
+function categoryListeners(){
+    $("#Exercise-articles").click(async function(){
+        $("#modal-body").html("")
+        html = await generateCards(article_titles.Exercise);
+        console.log(html)
+        loadCards("#modal-body", html)
+    });
+
+    $("[id='Mental Health-articles']").click(async function(){
+        $("#modal-body").html("")
+        html = await generateCards(article_titles["Mental Health"]);
+        console.log(html)
+        loadCards("#modal-body", html)
+    });
+
+    $("#Dieting-articles").click(async function(){
+        $("#modal-body").html("")
+        html = await generateCards(article_titles.Dieting);
+        console.log(html)
+        loadCards("#modal-body", html)
+    });
+}
+
+
 
 
 function getURL(title){
@@ -189,11 +231,9 @@ function getCaption(html){
 // $("#exercise-routine-btn").click(function(){}
 // })
 
-
-
-function createWikiCard(thumbnailURL, title, caption){
+function createCategoryCard(thumbnailURL, title, caption){
     return `
-    <div class="card shadow mb-3 bg-white rounded " style="max-width: 1000px;">
+    <div id="${title}-articles" class="card shadow mb-3 bg-white rounded " style="max-width: 1000px;">
                         <div class="row no-gutters">
                             <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
                               <img src="${thumbnailURL}" class="card-img" alt="..."> 
@@ -201,7 +241,7 @@ function createWikiCard(thumbnailURL, title, caption){
                             </div>
                             <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
                                 <div class="card-body" data-toggle="modal" data-target="#exampleModal">
-                                    <h5 class="card-title">${title}</h5>
+                                <h5 class="card-title">${title}</h5>
                                     <p class="card-text">${caption}</p>
                                 </div>
                             </div>
@@ -210,3 +250,43 @@ function createWikiCard(thumbnailURL, title, caption){
     `
 }
 
+
+
+function createWikiCard(thumbnailURL, title, caption, link, category){
+    return `
+    <div id="${category}-articles" class="card shadow mb-3 bg-white rounded " style="max-width: 1000px;">
+                        <div class="row no-gutters">
+                            <div class=" col-md-4" data-toggle="modal" data-target="#exampleModal">
+                              <img src="${thumbnailURL}" class="card-img" alt="..."> 
+                                
+                            </div>
+                            <div class="col-md-8" data-toggle="modal" data-target="#exampleModal">
+                                <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                                <a href=${link}><h5 class="card-title">${title}</h5></a>
+                                    <p class="card-text">${caption}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>              
+    `
+}
+
+// Categories
+// - Exercises
+//  - "Aerobics"
+//  - Calisthenics
+//  - Strength_training
+// - Mental Health
+// - Dieting
+//  - "Food_group"
+//  - Low-carbohydrate_diet
+
+// Cards
+// Modal cards
+
+// loop through catergories
+// create card for each category
+// each card needs:
+// 1. Title
+// 2. Thumbnail
+// 3. Caption
