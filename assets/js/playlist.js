@@ -1,7 +1,9 @@
+// youtube playlist parameters: https://developers.google.com/youtube/player_parameters
+
 var apiKey = 'AIzaSyA7GFSrrG8v7j_vHqluZD_SnoUS-LgLiDE';
 var youtube = 'https://www.youtube.com/embed/';
-var fetchApi = 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet'
-var otherSearchParameters = 'videoType=videoTypeUnspecified'
+var fetchApi = 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet';
+var otherSearchParameters = 'videoType=videoTypeUnspecified';
 
 
 // Local storage checks
@@ -108,7 +110,7 @@ async function fundamentalsSeries() {
         var videos = `
         <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
          <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                            <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
+                            <iframe class="${videoId}" id="${videoId}" width="100%" height="100%" src='${emBedClip}' allowfullscreen>   
                            
                             </iframe>
                             <h4  class="card-text" >${title}</h4>
@@ -153,7 +155,7 @@ async function fullBodyWorkOut() {
         var videos = `
         <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
          <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                            <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
+                            <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'  allowfullscreen>   
                            
                             </iframe>
                             <h4  class="card-text" >${title}</h4>

@@ -1,11 +1,28 @@
 body {
+    background-image: url("assets/img/gym_bar.jpeg");
     background-color: lightgrey;
+
 }
 
 section {
     display: flex;
     flex-direction: column;
     margin: auto;
+}
+
+.jumbotron img {
+    width: 100%;
+    padding: 10px 0 10px 0;
+}
+
+.jumbotron {
+    margin: 10px auto;
+}
+
+.jumbotron iframe {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 10px 0;
 }
 
 .card {
@@ -40,6 +57,7 @@ iframe {
 
 a.logo {
     text-decoration: none;
+    color: #232a31;
 }
 
 div.nav-bar {
