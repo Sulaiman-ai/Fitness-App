@@ -36,7 +36,7 @@ async function lowIntensityWorkOut() {
         var videos = `
         <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
         <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                           <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
+                           <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'  allowfullscreen>   
                           
                            </iframe>
                            <h4  class="card-text" >${title}</h4>
@@ -76,7 +76,7 @@ async function nutritianHelpRegulateMood() {
         var videos = `
         <div class="card p-2 modalCards ${playListId + " " + videoId} col-sm-5" id="${playListId}"  style="width: 18rem;">
         <button class='${playListId + " watched-" + videoId}' id='watched'>Mark this clip as watched?</button>
-                           <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'>   
+                           <iframe class="${videoId}"  id="${videoId}" width="100%" height="100%" src='${emBedClip}'  allowfullscreen>   
                           
                            </iframe>
                            <h4  class="card-text" >${title}</h4>
