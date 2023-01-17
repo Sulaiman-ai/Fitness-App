@@ -58,6 +58,7 @@ categories = [
     caption: "Information on different diet types"}
 ]
 
+// function to generate and compile the category card html
 function generateCategoryCards(categories){
     html = "";
     for (const category of categories){
@@ -74,10 +75,11 @@ article_titles = {
 
 titles = ["Food_group", "Aerobics", "Weight_loss"]
 
+
+// function to call the API and compile all the data into an array of objects
 async function wikiDataList(titles){
     let wikiData = [];
     
-    // titles.forEach(()=>{wikiData.push(getWikiData())})
     for (const title of titles){
         let wikiObj;
         await getWikiData(title).then((data)=>{
@@ -88,18 +90,14 @@ async function wikiDataList(titles){
             return getThumbnail(title, pageID).then((url)=>{
                 thumbnailSRC = url;
                 wikiObj = {header, html, pageID, thumbnailSRC, link}
-                // wikiData.push({title:"title", html:"html", pageID:"pageID", thumbnailSRC:"thumbnailSRC"})
                 wikiData.push(wikiObj);
             })
         });
     }
-    // wikiData.push({title:"title", html:"html", pageID:"pageID", thumbnailSRC:"thumbnailSRC"})
-    // wikiData.shift()
-    // console.log(wikiData)
-    // console.log(wikiData["1"])
     return wikiData
 }
 
+// Promise which calls the wiki API the resolves the relevant data
 async function getWikiData(title){
     console.log(title)
     url = getURL(title)
@@ -115,19 +113,14 @@ async function getWikiData(title){
 
             console.log("data", data)
 
-            // thumbnailSRC = getThumbnail(title, pageID);
-            // getThumbnail(title, pageID).then((data)=>{
-            //     thumbnailSRC=data
-            //     console.log(thumbnailSRC)
-            //     resolve({html, thumbnailSRC});
-            // });
             resolve({html, pageID, header});
         })
-        // .then(()=> {return {html, thumbnailSRC}});
     });
     return wikiPromise
   };
 
+
+// API call to get the thumbnail source
 async function getThumbnail(title, pageID){
     thumbnailURL = getThumbnailURL(title)
     console.log(thumbnailURL)
@@ -136,12 +129,11 @@ async function getThumbnail(title, pageID){
             thumbnailSRC = data.query.pages[pageID].thumbnail.source;
             resolve(thumbnailSRC)
         })
-        // .then(()=>{return thumbnailSRC});
     });
     return thumbnailPromise
 };
 
-
+// gets the data from the API call and compiles the cards created using that API data
 async function generateCards(titles){
     wikiData = await wikiDataList(titles)
     console.log(wikiData)
@@ -150,26 +142,24 @@ async function generateCards(titles){
         article = wikiData[i];
         html += createWikiCard(article.thumbnailSRC, article.header, getCaption(article.html), article.link)
     }
-    // wikiData.forEach((article)=>{
-    //     console.log(createWikiCard(article.thumbnailSRC, article.title, "caption"))
-    //     html += createWikiCard(article.thumbnailSRC, article.title, "caption")
-    // })
+
     return html;
 }
 
+// takes a container and html code, and adds the elements inside the container
 function loadCards(container, html){
     $(container).html(html)
     // $('#modal-body').html(html)
 }
 
-// console.log(wikiDataList(titles))
+
 async function showCards(){
     html = await generateCards(1)
     loadCards(html)
 }
 
 
-
+// click listener which generates the cards when the user selects articles
 $("#articles-btn").click(function(){
     $("#main").html("")
     html = generateCategoryCards(categories);
@@ -179,6 +169,9 @@ $("#articles-btn").click(function(){
     
 })
 
+
+// assigns listener to the category cards
+// when the card is clicked the relevant cards are added to the modal
 function categoryListeners(){
     $("#Exercise-articles").click(async function(){
         $("#modal-body").html("")
@@ -204,16 +197,18 @@ function categoryListeners(){
 
 
 
-
+// gets the url to use for the API based on the article's title
 function getURL(title){
     return `https://en.wikipedia.org/w/api.php?action=parse&page=${title}&prop=text&section=0&format=json`
 }
 
+// gets the url to use in the API call to get the article thumbnail
 function getThumbnailURL(title){
     return `https://en.wikipedia.org/w/api.php?action=query&titles=${title}&prop=pageimages&format=json&pithumbsize=100`
 }
 
 
+// a function to retrieve the article description from the wiki articles html code
 function getCaption(html){
     let parser = new DOMParser();
     let doc = parser.parseFromString(html, 'text/html');
@@ -225,12 +220,8 @@ function getCaption(html){
 
 
 
-// loadCards(thumbnailURL, "Fitness", caption)
 
-
-// $("#exercise-routine-btn").click(function(){}
-// })
-
+// Generates the html for the cards showing the different fitness categories
 function createCategoryCard(thumbnailURL, title, caption){
     return `
     <div id="${title}-articles" class="card shadow mb-3 bg-white rounded " style="max-width: 1000px;">
