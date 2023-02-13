@@ -190,8 +190,8 @@ async function init() {
 
 };
 // init();
-
-$("#exercise-routine-btn").click(function () {
+// made changes to meet the feedback requirement from JD
+$("#exercise-routine-btn, #exercise-routine-side ").click(function () {
     $("#main").html("")
     init()
 })

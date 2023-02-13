@@ -12,10 +12,7 @@ This application has been created to help users with mental health issues throug
 ## Live page: https://sulaiman-ai.github.io/Fitness-App/index.html
 <br />
 
-
-
 ![alt text](/assets/img/mindandboday.gif)
-
 
 <br />
 <br />
@@ -26,10 +23,9 @@ For this project, we have used the following tools:
 * JavaScript
 * jQuery
 * Bootstrap
-
-## Instructions
-
-You can access the application through the following link: https://sulaiman-ai.github.io/Fitness-App/
+* youtoube api
+* pexels api 
+* wiki api
 
 ## License
 

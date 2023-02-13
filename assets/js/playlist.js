@@ -52,8 +52,10 @@ function getAndSetPorpertiesToDom() {
     locallyStoredIds.forEach(items => {
         console.log(items);
         console.log(items.videoId);
-        $(`button.${items.videoId}`).css({ "background": "red" });
-
+        $(`button.${items.videoId}`)
+            .css({ "background": "red" })
+            // Updated “Mark this clip as watched?" to Watched recieving feedback from instrutor JD 
+            .text("Item added");
     });
 }
 getAndSetPorpertiesToDom();
